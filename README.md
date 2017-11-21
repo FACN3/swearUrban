@@ -3,9 +3,9 @@
 
 ## WHO
 swearUrban is a team of smashing charming individuals:
-Hasan
-Marlen
-Neil
+- Hasan
+- Marlen
+- Neil
 
 ## WHAT
 swearUrban takes the dictionary of https://www.urbandictionary.com/ and suggests values based on what the user is typing in the search box on the homepage. Time permitting, it will pull up the result on urbandictionary, either in the window or hyperlinking to a new site
