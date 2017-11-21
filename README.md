@@ -1,5 +1,5 @@
 # swearUrban
-__# an autocomplete search app with spunk!_**
+## an autocomplete search app with spunk!
 
 ## WHO
 swearUrban is a team of smashing charming individuals:
@@ -17,7 +17,7 @@ as soon as possible
 In order to practice servers with node.js and implement past weeks' learning, especially XMLHttpRequests, we need to create an application that frequently makes api requests to a server, sends back successful responses (whether full web pages, css, .js files or json data), and that is hosted on a web server. 
 ## PLAN
 ### WIRE FRAME & ARCHITECTURE
-
+![alt text](https://github.com/FACN3/swearUrban/blob/master/WhatsApp%20Image%202017-11-21%20at%2012.49.54.jpeg)
 ### REQUIREMENTS
 #### Search Bar
 * drop down list of suggestions (limited to 6 max)
