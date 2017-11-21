@@ -1,8 +1,8 @@
 function fetch(url,callBack){
   var xhr= new XMLHttpRequest();
   xhr.onreadystatechange = function(){
-    if(this.readystate = 4 && this.status = 200){
-      callBack(Json.parse(this.responseText));
+    if(xhr.readystate = 4 && xhr.status = 200){
+      callBack(JSON.parse(xhr.responseText));
     }
   };
   xhr.open("GET",url);

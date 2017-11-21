@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+var filter = require('./filter')
 
 
 const handlerHelper = {
@@ -37,6 +38,8 @@ const handlerHelper = {
   handlePath: function(url) {
     if(url=="/"){
       url = 'public/index.html';
+    }else if (url.includes("/?="){
+      console.log(filter(url.split("?=")[1]));
     }
     return path.join(__dirname, "..", url);
   }
