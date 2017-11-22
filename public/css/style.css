@@ -1,7 +1,45 @@
-body{
+body {
   margin: 0 auto;
-
+  background-color: #FAEBD7;
 }
-.container{
+
+.container {
   text-align: center;
+}
+h1{
+  font-family: 'Raleway', sans-serif;
+}
+input {
+  width: 99%;
+}
+
+.hold {
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 48%;
+  border-top: none;
+}
+
+.divResults {
+  /*border: 1px solid black;*/
+  /*border-top: none;*/
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ulDesign {
+  list-style-type: none;
+  text-align: center;
+  /*width: 100%;*/
+  padding: 0;
+}
+
+.liDesignFull {
+  border-top: 1px solid black;
+  width: 100%;
+}
+
+.liDesignFull:hover {
+  cursor: pointer;
+  background-color: #D3D3D3;
 }
