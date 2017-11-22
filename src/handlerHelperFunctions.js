@@ -58,8 +58,16 @@ const handlerHelper = {
       js: 'application/javascript',
       ico: 'image/x-icon',
       jpeg: 'image/x-icon'
+<<<<<<< Updated upstream
     }[url.split(".")[1]]
     
+=======
+
+    }[url.split(".")[1]]
+    // if(url.split(".")[1]=="jpeg"){
+    //   return 'image/x-icon';
+
+>>>>>>> Stashed changes
     return extensionType;
   },
   handlePath: function(url) {
