@@ -1,13 +1,36 @@
 var fs = require('fs');
 var path = require('path');
-var filter = require('./filter')
-
+var filterRes = require('./filter')
+var queryString = require('querystring')
 
 const handlerHelper = {
   getTheFile: function(filePath, type ,res) {
     console.log(filePath);
     console.log(type);
-
+    if (filePath.includes("/?q=")){
+     // console.log(filter(url.split("?=")[1]));
+     console.log(filePath);
+    //  var fPath=filePath.split("?")[1];
+    //  var parsed = queryString.parse(fPath);
+    //  console.log(parsed);
+    console.log(filePath.indexOf('\/\?'));
+    var index = filePath.indexOf('\/\?');
+    console.log(filePath.substring(index+2))
+     var result=filterRes(queryString.parse(filePath.substring(index+2))["q"]);
+     console.log(result);
+     if (!result){
+       res.writeHead(500, {
+         'content-type': 'text/plain'
+       });
+       res.end('dictionary retrieve error');
+     } else {
+       res.writeHead(200, {
+         'content-type': type
+       });
+       var stringResult=JSON.stringify(result);
+       res.end(stringResult);
+     }
+   }
     fs.readFile(filePath, (err, file) => {
       /* istanbul ignore if */
       if (err) {
@@ -38,8 +61,6 @@ const handlerHelper = {
   handlePath: function(url) {
     if(url=="/"){
       url = 'public/index.html';
-    }else if (url.includes("/?="){
-      console.log(filter(url.split("?=")[1]));
     }
     return path.join(__dirname, "..", url);
   }
