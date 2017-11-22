@@ -1,13 +1,14 @@
-var data = require("./dataa.json");
+var data = require("../dataa.json");
 
-function filter(searchterm){
+function filterRes(searchterm){
+  console.log(searchterm);
   var newArr=[];
-  var parsed = JSON.parse(data);
+  var parsed = JSON.parse(JSON.stringify(data));
    parsed.every(function(element){
-    if(newArray.length==6){
+    if(newArr.length==6){
       return false;
     }
-    if (element.indexOf(searchterm)!=-1){
+    if (element.indexOf(searchterm)!=-1 && element.indexOf(searchterm)==0){
       newArr.push(element);
     }
     return true;
@@ -18,4 +19,4 @@ function filter(searchterm){
 
 
 
-module.exports = filter;
+module.exports = filterRes;
