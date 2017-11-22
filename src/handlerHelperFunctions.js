@@ -58,8 +58,11 @@ const handlerHelper = {
       js: 'application/javascript',
       ico: 'image/x-icon',
       jpeg: 'image/x-icon'
+
     }[url.split(".")[1]]
-    
+    // if(url.split(".")[1]=="jpeg"){
+    //   return 'image/x-icon';
+
     return extensionType;
   },
   handlePath: function(url) {
