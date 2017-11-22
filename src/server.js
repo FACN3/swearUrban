@@ -2,7 +2,7 @@ var http = require('http');
 var handler = require('./handlers.js');
 
 const host = process.env.HOST || 'localhost';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5200;
 
 
 var server = http.createServer(handler);

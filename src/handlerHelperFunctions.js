@@ -5,29 +5,31 @@ var queryString = require('querystring')
 
 const handlerHelper = {
   getTheFile: function(filePath, type ,res) {
-    console.log(filePath);
-    console.log(type);
+    console.log("The File Path : ",filePath);
+    console.log("The File type : ",type);
     if (filePath.includes("/?q=")){
      // console.log(filter(url.split("?=")[1]));
-     console.log(filePath);
+    //  console.log(filePath);
     //  var fPath=filePath.split("?")[1];
     //  var parsed = queryString.parse(fPath);
     //  console.log(parsed);
-    console.log(filePath.indexOf('\/\?'));
+    // console.log(filePath.indexOf('\/\?'));
     var index = filePath.indexOf('\/\?');
-    console.log(filePath.substring(index+2))
+    // console.log(filePath.substring(index+2))
      var result=filterRes(queryString.parse(filePath.substring(index+2))["q"]);
-     console.log(result);
+     console.log("This is the result: ",result);
      if (!result){
        res.writeHead(500, {
          'content-type': 'text/plain'
        });
        res.end('dictionary retrieve error');
      } else {
+       console.log(2);
        res.writeHead(200, {
-         'content-type': type
+         'content-type': "application/json"
        });
        var stringResult=JSON.stringify(result);
+       console.log();
        res.end(stringResult);
      }
    }
@@ -54,8 +56,10 @@ const handlerHelper = {
       html: 'text/html',
       css: 'text/css',
       js: 'application/javascript',
-      ico: 'image/x-icon'
+      ico: 'image/x-icon',
+      jpeg: 'image/x-icon'
     }[url.split(".")[1]]
+    
     return extensionType;
   },
   handlePath: function(url) {
