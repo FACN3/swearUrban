@@ -6,6 +6,10 @@ document.querySelector("#searchInput").addEventListener("input", function() {
     var urlSearchWord = encodeURI(searchWord);
     fetch(window.location.href + "?q=" + urlSearchWord, creatingUl); // var newArray = []
   }
+  else{
+    var el = document.querySelector("#results");
+    el.innerHTML="";
+  }
 });
 
 
@@ -15,6 +19,8 @@ document.querySelector("#searchInput").addEventListener("input", function() {
 function creatingUl(arr) {
   arr = JSON.parse(JSON.stringify(arr));
   var el = document.querySelector("#results");
+  el.innerHTML="";
+
   var newUl = document.createElement("ul");
   if (arr.length == 0) {
     var li = document.createElement("li");
