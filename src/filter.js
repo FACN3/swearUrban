@@ -3,9 +3,7 @@ var data = require("../data.json");
 function filterRes(searchterm){
   console.log(searchterm);
   var newArr=[];
-  // console.log('data is' ,data);
   var parsed = data;
-  // console.log(parsed);
    parsed.every(function(element){
     if(newArr.length==10){
       return false;
@@ -17,8 +15,5 @@ function filterRes(searchterm){
   })
   return newArr;
 }
-
-
-
 
 module.exports = filterRes;

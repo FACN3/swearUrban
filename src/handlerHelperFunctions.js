@@ -5,19 +5,9 @@ var queryString = require('querystring')
 
 const handlerHelper = {
   getTheFile: function(filePath, type ,res) {
-    console.log("The File Path : ",filePath);
-    console.log("The File type : ",type);
     if (filePath.includes("/?q=")){
-     // console.log(filter(url.split("?=")[1]));
-    //  console.log(filePath);
-    //  var fPath=filePath.split("?")[1];
-    //  var parsed = queryString.parse(fPath);
-    //  console.log(parsed);
-    // console.log(filePath.indexOf('\/\?'));
     var index = filePath.indexOf('\/\?');
-    // console.log(filePath.substring(index+2))
      var result=filterRes(queryString.parse(filePath.substring(index+2))["q"]);
-     console.log("This is the result: ",result);
      if (!result){
        res.writeHead(500, {
          'content-type': 'text/plain'
@@ -29,7 +19,6 @@ const handlerHelper = {
          'content-type': "application/json"
        });
        var stringResult=JSON.stringify(result);
-       console.log();
        res.end(stringResult);
      }
    }
@@ -57,11 +46,9 @@ const handlerHelper = {
       css: 'text/css',
       js: 'application/javascript',
       ico: 'image/x-icon',
-      jpeg: 'image/x-icon'
-
+      jpeg: 'image/x-icon',
+      png : 'image/x-icon'
     }[url.split(".")[1]]
-    // if(url.split(".")[1]=="jpeg"){
-    //   return 'image/x-icon';
 
     return extensionType;
   },
