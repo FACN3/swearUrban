@@ -39,13 +39,15 @@ In order to practice servers with node.js and implement past weeks' learning, es
 ### Final Thoughts
 We learnt a lot and had a great time working together! :sunny:
 
-A couple of things that we found useful
+A couple of things that we found useful:
 
-window.location.url gives you the url of the client (deployed on server/deployed on localhost)
+- window.location.url gives you the url of the client (deployed on server/deployed on localhost)
 
-encodeURI(url) provides a server-friendly url (useful for when search results have spaces or special characters)
+- encodeURI(url) provides a server-friendly url (useful for when search results have spaces or special characters)
 
-querystring
+- querystring
+
+querystring.parse (passes string and return objects)
 ```
 querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], corge: '' });
 // returns 'foo=bar&baz=qux&baz=quux&corge='
