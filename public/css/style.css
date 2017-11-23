@@ -1,23 +1,40 @@
 body {
   margin: 0 auto;
   background-color: #FAEBD7;
+  background-image: url(../images/bleep_912_2.png);
+  margin-top: 10vh;
 }
 
 .container {
   text-align: center;
+  padding: 50px 0px;
+  background-color: #fe00008a;
+  margin:0% 15%;
+  border-radius: 50px;
 }
 h1{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Zilla Slab Highlight', cursive;
+  font-size:4em;
+  margin-top: 0px;
+  padding: 0px 5px 0px 5px;
 }
 input {
-  width: 99%;
+  width: 100%;
+  border: 1px;
+padding: 0px;
+height: 35px;
+}
+li {
+  padding:3px 0px 3px 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 
 .hold {
   margin: 0 auto;
   border: 1px solid black;
-  width: 48%;
-  border-top: none;
+  width: 50%;
+  font-size:1.5em;
 }
 
 .divResults {
@@ -25,13 +42,16 @@ input {
   /*border-top: none;*/
   width: 100%;
   margin: 0 auto;
+
 }
+
 
 .ulDesign {
   list-style-type: none;
   text-align: center;
   /*width: 100%;*/
-  padding: 0;
+  padding: 0px;
+  margin:0px;
 }
 
 .liDesignFull {
@@ -42,4 +62,7 @@ input {
 .liDesignFull:hover {
   cursor: pointer;
   background-color: #D3D3D3;
+}
+.liDesignEmpty {
+  padding:10px;
 }
