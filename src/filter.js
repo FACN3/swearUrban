@@ -3,7 +3,7 @@ var data = require("../data.json");
 function filterRes(searchterm){
   console.log(searchterm);
   var newArr=[];
-  var parsed = data;
+  var parsed = JSON.parse(JSON.stringify(data));
    parsed.every(function(element){
     if(newArr.length==10){
       return false;

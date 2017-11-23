@@ -5,8 +5,8 @@ var queryString = require('querystring')
 
 const handlerHelper = {
   getTheFile: function(filePath, type ,res) {
-    if (filePath.includes("/?q=")){
-    var index = filePath.indexOf('\/\?');
+    if (filePath.includes("?q=")){
+    var index = filePath.indexOf('\\\?');
      var result=filterRes(queryString.parse(filePath.substring(index+2))["q"]);
      if (!result){
        res.writeHead(500, {
